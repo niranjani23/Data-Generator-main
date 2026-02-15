@@ -1,0 +1,5 @@
+{
+  "name": "Dummy Data Generator",
+  "description": "An application that uses AI to generate customizable dummy data in various formats (JSON, CSV, XML) based on user descriptions. Users can then download the generated data for their development needs.",
+  "requestFramePermissions": []
+}
