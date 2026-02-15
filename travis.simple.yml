@@ -1,0 +1,45 @@
+# Simplified Travis CI Configuration
+# This is a streamlined version that runs all tests sequentially
+
+language: node_js
+
+node_js:
+  - '20'
+
+cache:
+  npm: true
+  directories:
+    - node_modules
+
+env:
+  - NODE_ENV=test VITE_GEMINI_API_KEY=test-api-key-12345
+
+branches:
+  only:
+    - main
+    - develop
+
+# Install dependencies
+install:
+  - npm ci
+
+# Run tests sequentially
+script:
+  - echo "Running unit tests first..."
+  - npm run test:unit -- --run --reporter=verbose
+  - echo "Unit tests passed! Running integration tests..."
+  - npm run test:integration -- --run --reporter=verbose
+  - echo "All tests passed! Generating coverage..."
+  - npm run test:coverage -- --run
+
+# Generate coverage report
+after_success:
+  - echo "Tests completed successfully!"
+  # Uncomment to upload coverage
+  # - bash <(curl -s https://codecov.io/bash)
+
+# Notifications
+notifications:
+  email:
+    on_success: change
+    on_failure: always
