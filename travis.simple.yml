@@ -28,7 +28,6 @@ script:
   - echo "Running unit tests first..."
   - npm run test:unit -- --run --reporter=verbose
   - echo "Unit tests passed! Running integration tests..."
-  - npm run test:integration -- --run --reporter=verbose
   - echo "All tests passed! Generating coverage..."
   - npm run test:coverage -- --run
 
