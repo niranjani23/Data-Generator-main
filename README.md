@@ -20,7 +20,7 @@ npm run test:unit
 
 ## 📊 CI/CD
 
-This project uses GitHub Actions for continuous integration:
+This project uses GitHub Actions for validating continuous integration:
 - ✅ Automated linting on every PR
 - ✅ Unit tests on every PR
 - ✅ Required approvals before merge
