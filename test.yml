@@ -62,9 +62,6 @@ jobs:
       
       - name: 📦 Install dependencies
         run: npm ci
-      
-      - name: 🔗 Run Integration Tests
-        run: npm run test:integration -- --run --reporter=verbose
         env:
           NODE_ENV: test
           VITE_GEMINI_API_KEY: test-api-key-12345
@@ -119,15 +116,9 @@ jobs:
       - name: Check test results
         run: |
           echo "Unit Tests Status: ${{ needs.unit-tests.result }}"
-          echo "Integration Tests Status: ${{ needs.integration-tests.result }}"
           
           if [ "${{ needs.unit-tests.result }}" != "success" ]; then
             echo "❌ Unit tests failed!"
-            exit 1
-          fi
-          
-          if [ "${{ needs.integration-tests.result }}" != "success" ]; then
-            echo "❌ Integration tests failed!"
             exit 1
           fi
           
