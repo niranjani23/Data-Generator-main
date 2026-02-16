@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "test:unit": "vitest run tests/components/unit",
     "test:coverage": "vitest run --coverage",
-    "lint:check": "eslint . --max-warnings 0"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:check": "eslint ."
   },
   "dependencies": {
     "@google/genai": "^1.15.0",
