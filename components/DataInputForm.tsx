@@ -18,7 +18,7 @@ const EXAMPLE_PROMPTS = [
   { label: "User Profiles", text: "10 users with id, name, email, address (city, state), and role (Admin, User)" },
   { label: "E-commerce", text: "5 products with name, price, category, stock count, and isAvailable boolean" },
   { label: "Transactions", text: "List of 5 financial transactions with id, amount, currency, status, and timestamp" },
-  { label: "Sensor Data", text: "20 sensor readings with deviceId, temperature, humidity, and timestamp" },
+  { label: "Sensor Data", text: "20 sensor readings with deviceId, temperature, humidity, and timestamps" },
 ];
 
 const DataInputForm: React.FC<DataInputFormProps> = ({
