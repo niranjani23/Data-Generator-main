@@ -8,13 +8,13 @@ if (!process.env.API_KEY) {
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const generateDummyData = async (
-  userPrompt: string, 
+  userPrompt: string,
   format: DataFormat,
   options: GenerationOptions,
   onChunk: (chunk: string) => void
 ): Promise<void> => {
   const model = 'gemini-3-flash-preview';
-  
+
   let specificInstructions = '';
   switch (format) {
     case DataFormat.JSON:
@@ -89,6 +89,5 @@ export const generateDummyData = async (
     }
   } catch (error) {
     console.error("Error calling Gemini API:", error);
-    throw new Error("Failed to fetch data from Gemini API.");
   }
 };
