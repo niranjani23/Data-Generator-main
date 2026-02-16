@@ -7,7 +7,7 @@ if (!process.env.API_KEY) {
 
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
-export const generateDummyData = async (
+export const generateSyntheticData = async (
   userPrompt: string,
   format: DataFormat,
   options: GenerationOptions,
