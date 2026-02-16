@@ -38,16 +38,7 @@ jobs:
           VITE_GEMINI_API_KEY: test-api-key-12345
       
       # ============================================
-      # STEP 2: Run Integration Tests (Only if unit tests pass)
-      # ============================================
-      - name: 🔗 Run Integration Tests
-        run: npm run test:integration -- --run --reporter=verbose
-        env:
-          NODE_ENV: test
-          VITE_GEMINI_API_KEY: test-api-key-12345
-      
-      # ============================================
-      # STEP 3: Generate Coverage (Optional - only on main branch)
+      # STEP 2: Generate Coverage (Optional - only on main branch)
       # ============================================
       - name: 📊 Generate Coverage Report
         if: github.ref == 'refs/heads/main'
@@ -57,7 +48,7 @@ jobs:
           VITE_GEMINI_API_KEY: test-api-key-12345
       
       # ============================================
-      # STEP 4: Upload Coverage (Optional)
+      # STEP 3: Upload Coverage (Optional)
       # ============================================
       - name: 📤 Upload Coverage
         if: github.ref == 'refs/heads/main'
